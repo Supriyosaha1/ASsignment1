@@ -1,7 +1,13 @@
-L = [1, 2, 4, 8, 16, 32, 64]
+L = []
 X = 5
 
-if 2**X in L:
-    print("At index:",L.index(2**X))
+#target_value=2**X
+
+for i in range(10):
+    L.append(2**i)
+    
+    if 2**X==L[i]:
+        print("At index:",i)
+        break
 else:
-    print(X,"Not Found")
+    print(X, 'not found')
