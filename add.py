@@ -1,8 +1,7 @@
 #adding two floating point
-def adder(a,b):
-    return a+b
-a=5.4
-b=4.6
+def adder(good=1,bad=2,ugly=3):
+    return good+bad+ugly
 
-print(adder(a,b))
+
+print(adder(ugly=1,good=5))
 
