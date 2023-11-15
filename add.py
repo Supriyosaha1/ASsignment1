@@ -1,7 +1,7 @@
-#adding two floating point
-def adder(good=1,bad=2,ugly=3):
-    return good+bad+ugly
+#for arbitrary number of arguments
+def adder(*argument):
+    return sum(argument)
 
 
-print(adder(ugly=1,good=5))
+print(adder(1.5,8,1.5,7,1.2))
 
