@@ -10,10 +10,17 @@ int main()
     {
         my_array[i-1]=i*i;
     }
-    
-   
-    return 0;
 
+    float result[2]; // initializing the length of the array
+    mean_variance(my_array, 100, result);
+
+    // Print mean and variance
+    printf("Mean: %f\n", result[0]);
+    printf("Variance: %f\n", result[1]);
+    
+    
+
+    return 0;
 }
 
 void mean_variance(float *array, int length  , float *result) {
