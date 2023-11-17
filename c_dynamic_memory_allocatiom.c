@@ -11,12 +11,29 @@ int main()
         my_array[i-1]=i*i;
     }
     
-    printf("Values in the array:\n");
-    
-    for (int i = 0; i < 100; i++)
-    {
-        printf("%f",my_array[i]);
-    }
+   
     return 0;
 
+}
+
+void mean_variance(float *array, int length  , float *result) {
+    
+    float mean = 0.0;
+    float variance = 0.0;
+
+    // Calculate mean
+    for (int i = 0; i < length; i++) {
+        mean += array[i];
+    }
+    mean /= length;
+
+    // Calculate variance
+    for (int i = 0; i < length; i++) {
+        variance += (array[i] - mean) * (array[i] - mean);
+    }
+    variance /= length;
+
+    // Assign results to the output array
+    result[0] = mean;
+    result[1] = variance;
 }
