@@ -1,24 +1,7 @@
 // stats.c
-#include "stats.h"
+#include <gsl/gsl_statistics_float.h>
 
-void mean_variance(float *array, int length  , float *result) {
-    
-    float mean = 0.0;
-    float variance = 0.0;
-
-    // Calculate mean
-    for (int i = 0; i < length; i++) {
-        mean += array[i];
-    }
-    mean /= length;
-
-    // Calculate variance
-    for (int i = 0; i < length; i++) {
-        variance += (array[i] - mean) * (array[i] - mean);
-    }
-    variance /= length;
-
-    // Assign results to the output array
-    result[0] = mean;
-    result[1] = variance;
+void gsl_mean_variance(float *data, size_t size, double *result) {
+    result[0] = gsl_stats_float_mean(data, 1, size);
+    result[1] = gsl_stats_float_variance(data, 1, size);
 }
